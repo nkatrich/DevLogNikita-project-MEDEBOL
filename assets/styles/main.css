@@ -188,6 +188,8 @@
 
 .card-offer {
     width: 300px;
+    height: 100%;
+    max-height: 550px;
     background-color: var(--dark-theme);
     color: var(--light-theme);
     border-radius: var(--border-radius-card-offer);
@@ -206,14 +208,18 @@
 
 .description-of-offer {
     color: var(--light-theme);
-    margin: 0;
     margin: 10px;
+}
+
+.description-of-offer.dark {
+    color: var(--dark-theme);
 }
 
 .div-find {
     width: 100%;
     display: flex;
     justify-content: end;
+    
 }
 
 .find {
