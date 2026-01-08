@@ -1,0 +1,13 @@
+:root {
+    --light-theme: rgb(255, 255, 255);
+    --dark-theme: rgb(19, 19, 19);
+    --accent-color: rgb(206, 255, 61);
+    --size-logos-h-f: clamp(20px, 1.8vw, 64px);
+    --size-titles: clamp(20px, 1.7vw, 48px);
+    --size-a-h-f: clamp(24px, 1.67vw, 48px);
+    --border-radius-card-offer: 30px;
+    --border-radius-logos: 20px;
+    --border-radius-major-elements: 20px;
+    --padding-texts-titles: 10px;
+    --font-text-cards-offer: clamp(14px, 1.25vw, 24px)
+}

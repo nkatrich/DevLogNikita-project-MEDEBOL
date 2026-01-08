@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2025 by original authors @ fontello.com</metadata>
+<defs>
+<font id="medebol" horiz-adv-x="1000" >
+<font-face font-family="medebol" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="b-medebol" unicode="&#x42;" d="M535 787l131-136-92-318 92-283-131-135-133-64h-402l68 999h334l133-63z m-419-676l32-65 65-64h292l66 64 31 65-97 172-389 23v-195z m31 532l-31-65v-162l389-19 97 181-32 65-65 64h-292l-66-64z" horiz-adv-x="667" />
+
+<glyph glyph-name="d-medebol" unicode="&#x44;" d="M402 850l128-60 141-135v-604l-141-136-128-65h-402l65 1000h337z m-333-890h315l99 51 111 106v472l-111 106-99 46h-264l-51-781z" horiz-adv-x="671" />
+
+<glyph glyph-name="e-medebol" unicode="&#x45;" d="M66 850l-66-1000h597l71 129h-537l70 268h467l-71 68-63 66h-333l74 269h322l71 200h-602z" horiz-adv-x="668" />
+
+<glyph glyph-name="l-medebol" unicode="&#x4c;" d="M68 850l-68-999h605l-135 201h-267l68 739-203 59z" horiz-adv-x="606" />
+
+<glyph glyph-name="m-medebol" unicode="&#x4d;" d="M332 451l-161 399-94-495-77-504h165l70 532 97-203 104 203 65-532h168l-78 493-88 506-171-399z" horiz-adv-x="669" />
+
+<glyph glyph-name="o-medebol" unicode="&#x4f;" d="M599 714l66-135v-468l-66-131-131-129h-268l-131 129-69 135v464l69 135 133 136h266l131-136z m-410-71l-66-88-59-332 33-105 77-109 192-34 110 76 64 85 59 335-30 105-77 114-191 34-112-81z" horiz-adv-x="665" />
+</font>
+</defs>
+</svg>
