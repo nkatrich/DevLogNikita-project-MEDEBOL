@@ -5,6 +5,9 @@
     const suggestedOffersByInput = document.querySelector('.suggested-offers-by-input');
     const darkBg = document.querySelector('.dark-bg');
 
+    // catalog
+    const modalCatalog = document.querySelector('.modal-catalog');
+
     // modal windows
     const modalOffer = document.querySelector('.modal-offer');
     const bagOfOffers = document.querySelector('.bag-of-offers');
@@ -44,6 +47,7 @@ toggleTheme.addEventListener('click', () => {
     search.classList.toggle('dark');
     suggestedOffersByInput.classList.toggle('dark');
     btnCatalog.classList.toggle('dark');
+    modalCatalog.classList.toggle('dark');
     currentOffers.classList.toggle('dark');
 
     headerFooterLogo.forEach(el => {
@@ -170,6 +174,9 @@ function showResults(query) {
     if (!savedValue) {
         suggestedOffersByInput.classList.remove('shown');
     }
+    else if (userSearchResult.length === 0) {
+        suggestedOffersByInput.classList.remove('shown');
+    }
     else {
         suggestedOffersByInput.classList.add('shown');
         for (let i = 0; i < userSearchResult.length; i++) {
@@ -202,3 +209,13 @@ suggestedOffersByInput.addEventListener('click', () => {
 setInterval(() => {
     if (suggestedOffersByInput.classList.contains('shown')) inputSearch.style.borderRadius = '20px 0 0 0';
 }, 70)
+
+// logic of catalog
+
+btnCatalog.addEventListener('mouseenter', () => {
+    modalCatalog.classList.add('shown');
+})
+
+btnCatalog.addEventListener('mouseleave', () => {
+    modalCatalog.classList.remove('shown');
+})
