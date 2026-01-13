@@ -154,6 +154,10 @@
     margin-left: 10px;
 }
 
+.block-catalog:hover img {
+    transform: rotate(180deg);
+}
+
 .modal-catalog {
     display: none;
     position: absolute;
@@ -192,6 +196,10 @@
 
 .modal-catalog:hover {
     display: block;
+}
+
+.modal-catalog:hover img {
+    transform: rotate(180deg);
 }
 
 .slider-offer {

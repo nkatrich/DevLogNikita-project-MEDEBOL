@@ -31,6 +31,7 @@
     const inputSearch = document.querySelector('.input-search');
     const search = document.querySelector('.search');
     const btnCatalog = document.querySelector('.btn-catalog');
+    const btnCatalogImg = document.querySelector('.btn-catalog img');
     const currentOffers = document.querySelector('.current-offers');
     const threeOffer = document.querySelectorAll('.three-offer');
     const cardOffer = document.querySelectorAll('.card-offer');
