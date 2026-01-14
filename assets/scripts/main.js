@@ -9,9 +9,13 @@
     const modalCatalog = document.querySelector('.modal-catalog');
 
     // modal windows
+    const dialog = document.querySelector('dialog');
     const modalOffer = document.querySelector('.modal-offer');
     const bagOfOffers = document.querySelector('.bag-of-offers');
     const formForBuy = document.querySelector('.form-for-buy');
+
+    // fixed button to check whishlist
+    const currentBag = document.querySelector('.current-bag');
 
     // cards-content
     const cardOfferImg = document.querySelectorAll('.card-offer img');
@@ -123,8 +127,6 @@ for (let i = 0; i < contentCard.length; i++) {
     descriptionOfOffer[i].textContent = contentCard[i].text;
 }
 
-
-
 // logic of input search
 
 // style when active
@@ -219,4 +221,22 @@ btnCatalog.addEventListener('mouseenter', () => {
 
 btnCatalog.addEventListener('mouseleave', () => {
     modalCatalog.classList.remove('shown');
+})
+
+// logic of dialogs
+
+currentBag.addEventListener('click', () => {
+    bagOfOffers.showModal();
+})
+
+// close current dialog by cross button
+
+document.addEventListener('click', (e) => {
+    const btnCloseModal = e.target.closest('.div-close-modal');
+
+    if (btnCloseModal) {
+        modalOffer.close();
+        bagOfOffers.close();
+        formForBuy.close();
+    }
 })
