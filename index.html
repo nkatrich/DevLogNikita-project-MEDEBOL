@@ -201,10 +201,10 @@
     </div>
     <dialog class="modal-offer" role="dialog">
         <div class="content-of-offer">
-            <div class="content-image-offer">
-                <img src="./assets/images/furniture/furniture-11.webp" alt="Мебель надежного качества" width="285px" height="285px">
-            </div>
             <div class="content-description-offer">
+                <div class="content-image-offer">
+                    <img src="./assets/images/furniture/furniture-11.webp" alt="Мебель надежного качества" width="285px" height="285px">
+                </div>
                 <p class="name-description-of-offer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam maiores quo harum? Hic, accusantium! Iusto, repudiandae aperiam asperiores necessitatibus illum eaque unde vero minima blanditiis, odit voluptatibus voluptate dignissimos eligendi.</p>
                 <h3 class="price">1200$</h3>
                 <button class="throw-in-bin" type="button">В корзину<img src="./assets/icons/basket.svg" alt="Кнопка в корзину"></button>
@@ -213,13 +213,15 @@
         </div>
     </dialog>
     <dialog class="bag-of-offers" role="dialog">
-        <div class="suggested-offers">
-
+        <div class="content-of-bag-of-offers">
+            <div class="suggested-offers">
+                <div class="card-suggested-offer"><img class="img-suggested-offer" src="./assets/images/furniture/furniture-2.webp" alt="Мебель" width="70px" height="70px"><p class="p-suggested-offer">Lorem, ipsum dolor sit amet consectetur lo</p><div class="div-suggested-offer"><button class="btn-suggested-offer"><img src="./assets/icons/bin.svg" alt="Отменить и убрать" width="50px" height="50px"></button></div></div>
+            </div>
+            <div class="div-order-preform">
+                <button type="button">Заказать<img src="./assets/icons/bag.svg" alt="Кнопка готов к покупке"></button>
+            </div>
+            <div class="div-close-modal"><button type="button"><img src="./assets/icons/cross.svg" alt="Крестик для закрытия"></button></div>
         </div>
-        <div class="div-order-preform">
-            <button type="button">Заказать<img src="./assets/icons/bag.svg" alt="Кнопка готов к покупке"></button>
-        </div>
-        <div class="div-close-modal"><button type="button"><img src="./assets/icons/cross.svg" alt="Крестик для закрытия"></button></div>
     </dialog>
     <dialog class="form-for-buy" role="dialog">
         <div class="div-form">
@@ -229,12 +231,13 @@
                 <input type="email" id="email" required placeholder="Email">
                 <label for="password">Ваше имя:</label>
                 <input type="password" id="password" required placeholder="Имя">
-                <span class="agree-condition">Согласны с нашими условиями<input class="tick" type="checkbox" required></span>
+                <span class="agree-condition">Согласны с нашими условиями<input id="tick" type="checkbox" required></span>
                 <button class="order" type="button">Оформить заказ<img src="./assets/icons/bag.svg" alt="Кнопка готов к покупке"></button>
             </form>
         </div>
         <div class="div-close-modal"><button type="button"><img src="./assets/icons/cross.svg" alt="Крестик для закрытия"></button></div>
     </dialog>
     <div class="dark-bg"></div>
+    <div class="if-order-successful"><p>Заказ был выполнен успешно, благодарим вас!</p></div>
 </body>
 </html>

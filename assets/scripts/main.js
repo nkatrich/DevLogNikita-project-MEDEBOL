@@ -13,6 +13,11 @@
     const modalOffer = document.querySelector('.modal-offer');
     const bagOfOffers = document.querySelector('.bag-of-offers');
     const formForBuy = document.querySelector('.form-for-buy');
+    const btnOrderPreform = document.querySelector('.div-order-preform button');
+
+    // modal window form
+    const order = document.querySelector('.order');
+    const ifOrderSuccessful = document.querySelector('.if-order-successful');
 
     // fixed button to check whishlist
     const currentBag = document.querySelector('.current-bag');
@@ -177,16 +182,14 @@ function showResults(query) {
     if (!savedValue) {
         suggestedOffersByInput.classList.remove('shown');
     }
-    else if (userSearchResult.length === 0) {
-        suggestedOffersByInput.classList.remove('shown');
-    }
+    else if (userSearchResult.length === 0) suggestedOffersByInput.classList.remove('shown');
     else {
         suggestedOffersByInput.classList.add('shown');
         for (let i = 0; i < userSearchResult.length; i++) {
             if (userSearchResult[i].length > 20) {
                 let splited = userSearchResult[i].split("");
                 let returnToStr = [];
-                for (let j = 0; j < 30; j++) {
+                for (let j = 0; j < 35; j++) {
                     returnToStr.push(splited[j])
                 }
                 let restoredStr = returnToStr.join("").trim();
@@ -239,4 +242,17 @@ document.addEventListener('click', (e) => {
         bagOfOffers.close();
         formForBuy.close();
     }
+})
+
+btnOrderPreform.addEventListener('click', () => {
+    bagOfOffers.close();
+    formForBuy.showModal();
+})
+
+order.addEventListener('click', () => {
+    formForBuy.close();
+    ifOrderSuccessful.classList.add('shown');
+    setTimeout(() => {
+        ifOrderSuccessful.classList.remove('shown');
+    }, 9000);
 })

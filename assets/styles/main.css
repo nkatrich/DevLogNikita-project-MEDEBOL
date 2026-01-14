@@ -367,7 +367,42 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
     z-index: 10;
+}
+
+.if-order-successful {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: var(--accent-color);
+    color: var(--dark-theme);
+    border-radius: 0 0 0 20px;
+    padding: 15px;
+    filter: drop-shadow(-5px 5px 40px var(--accent-color));
+    z-index: 9;
+    transform: translateY(-400px);
+    transition: transform 0.6s ease;
+}
+
+.if-order-successful.shown {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: var(--accent-color);
+    color: var(--dark-theme);
+    border-radius: 0 0 0 20px;
+    padding: 15px;
+    z-index: 9;
+    transform: translateY(0);
+}
+
+.if-order-successful p {
+    font-size: clamp(18px, 1.55vw, 48px);
+    font-weight: bold;
+    margin: 0;
+    max-width: 300px;
+    text-align: center;
 }
 
 /* modal windows */
@@ -391,6 +426,7 @@ dialog:not([open]) {
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
 }
 
 .modal-offer {
@@ -400,7 +436,8 @@ dialog::backdrop {
 }
 
 .content-of-offer {
-    
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .content-image-offer {
@@ -441,6 +478,153 @@ dialog::backdrop {
     border-radius: var(--border-radius-major-elements);
     font-size: var(--size-titles);
     font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.bag-of-offers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-of-bag-of-offers {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suggested-offers {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-suggested-offer {
+    width: 100%;
+    max-width: 500px;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-theme);
+}
+
+.img-suggested-offer {
+    border-radius: 20px 0 0 20px;
+}
+
+.p-suggested-offer {
+    color: var(--accent-color);
+    padding: 5px;
+    font-size: clamp(14px, 1.2vw, 22px);
+    width: 100%;
+}
+
+.div-suggested-offer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-suggested-offer {
+    background-color: red;
+    height: 100%;
+    border-radius: 0 20px 20px 0;
+}
+
+.div-order-preform {
+
+}
+
+.div-order-preform button {
+    background-color: var(--accent-color);
+    color: var(--dark-theme);
+    padding: var(--padding-texts-titles);
+    border-radius: var(--border-radius-major-elements);
+    font-size: var(--size-titles);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-for-buy {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.div-form {
+    
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-beg {
+    text-align: center;
+}
+
+form label {
+    font-size: clamp(16px, 1.5vw, 32px);
+    font-weight: bold;
+    margin: 20px;
+}
+
+#email, #password {
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--border-radius-major-elements);
+    border: var(--accent-color) 3px dotted;
+    background-color: var(--dark-theme);
+    color: var(--light-theme);
+    padding: 5px;
+    font-weight: bold;
+    font-size: clamp(18px, 1.4vw, 28px);
+}
+
+#email::placeholder, #password::placeholder {
+    color: var(--light-theme);
+    font-weight: bold;
+    font-size: clamp(18px, 1.4vw, 28px);
+}
+
+.agree-condition {
+    font-size: clamp(14px, 1.3vw, 24px);
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#tick {
+    accent-color: var(--accent-color);
+    width: 25px;
+    height: 25px;
+}
+
+.order {
+    background-color: var(--accent-color);
+    color: var(--dark-theme);
+    padding: var(--padding-texts-titles);
+    border-radius: var(--border-radius-major-elements);
+    font-size: var(--size-titles);
+    font-weight: bold;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -481,6 +665,30 @@ dialog::backdrop {
 
     .three-offer {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .content-of-offer {
+        display: grid;
+        grid-template-columns: 100% 100%;
+    }
+
+    .content-description-offer {
+        
+    }
+    
+    .content-of-bag-of-offers {
+        width: 100%;
+        flex-direction: row;
+        align-items: normal;
+    }
+
+    .form-for-buy {
+        flex-direction: row;
+    }
+
+    .div-close-modal {
+        align-items: flex-start;
+        padding: 0;
     }
 }
 
