@@ -456,6 +456,7 @@ dialog::backdrop {
 
 .name-description-of-offer {
     max-width: 285px;
+    font-size: clamp(16px, 1.4vw, 36px);
 }
 
 .price {
