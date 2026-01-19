@@ -18,6 +18,7 @@ body.dark::-webkit-scrollbar-track {
 
 ::-webkit-scrollbar {
     width: 9px;
+    
 }
 
 ::-webkit-scrollbar-track {

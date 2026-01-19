@@ -368,7 +368,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(5px);
-    z-index: 10;
+    z-index: 9;
 }
 
 .if-order-successful {
@@ -380,20 +380,12 @@
     border-radius: 0 0 0 20px;
     padding: 15px;
     filter: drop-shadow(-5px 5px 40px var(--accent-color));
-    z-index: 9;
+    z-index: 11;
     transform: translateY(-400px);
     transition: transform 0.6s ease;
 }
 
 .if-order-successful.shown {
-    position: fixed;
-    right: 0;
-    top: 0;
-    background-color: var(--accent-color);
-    color: var(--dark-theme);
-    border-radius: 0 0 0 20px;
-    padding: 15px;
-    z-index: 9;
     transform: translateY(0);
 }
 
@@ -472,7 +464,7 @@ dialog::backdrop {
     background-color: var(--light-theme);
 }
 
-.throw-in-bin {
+.throw-in-bin, .div-order-preform button, .order {
     background-color: var(--accent-color);
     color: var(--dark-theme);
     padding: var(--padding-texts-titles);
@@ -541,21 +533,12 @@ dialog::backdrop {
     border-radius: 0 20px 20px 0;
 }
 
-.div-order-preform {
-
+.if-bin-empty {
+    text-align: center;
 }
 
-.div-order-preform button {
-    background-color: var(--accent-color);
-    color: var(--dark-theme);
-    padding: var(--padding-texts-titles);
-    border-radius: var(--border-radius-major-elements);
-    font-size: var(--size-titles);
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+.div-order-preform {
+
 }
 
 .form-for-buy {
@@ -616,20 +599,6 @@ form label {
     accent-color: var(--accent-color);
     width: 25px;
     height: 25px;
-}
-
-.order {
-    background-color: var(--accent-color);
-    color: var(--dark-theme);
-    padding: var(--padding-texts-titles);
-    border-radius: var(--border-radius-major-elements);
-    font-size: var(--size-titles);
-    font-weight: bold;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
 }
 
 .div-close-modal {

@@ -188,6 +188,8 @@ let savedValue;
 
 // system convert in low case exist content text of card in case if user write any case(big small). Also system convert to low case value from input. It guarantee that system can filter user wants
 
+// debounce code for input search
+
 function debounce(fn, delay) {
   let timer;
 
@@ -226,9 +228,11 @@ function showResults(query) {
     }
 }
 
+// call debounce
+
 inputSearch.addEventListener("input", debounce(e => {
   showResults(e.target.value);
-}, 550));
+}, 500));
 
 suggestedOffersByInput.addEventListener('click', () => {
     suggestedOffersByInput.classList.remove('shown');
@@ -253,30 +257,30 @@ btnCatalog.addEventListener('mouseleave', () => {
 
 currentBag.addEventListener('click', () => {
     bagOfOffers.showModal();
-    
+    checkIfBinEmpty();
 })
 
+// insert good in wishlist
+
 let toShortForWhishlist = [];
-const HTMLCollectionOfWishlist = []
-let indexRemoveFromWhislist = 0;
 throwInBin.addEventListener('click', () => {
-    indexRemoveFromWhislist++;
-    let shorted = shortText(toShortForWhishlist)
-    HTMLCollectionOfWishlist.push(`<div class="card-suggested-offer"><img class="img-suggested-offer" src="${contentCard[getIdOfBtn - 1].src}" alt="Мебель" width="70px" height="70px"><p class="p-suggested-offer">${shorted}</p><div class="div-suggested-offer"><button class="btn-suggested-offer" data-removeFromWhislist="${indexRemoveFromWhislist}"><img src="./assets/icons/bin.svg" alt="Отменить и убрать" width="50px" height="50px"></button></div></div>`);
-    for (let i = 0; i < HTMLCollectionOfWishlist.length; i++) {
-        suggestedOffers.innerHTML += HTMLCollectionOfWishlist[i];
-        i = HTMLCollectionOfWishlist.length - 1;
-    }
+    let shorted = shortText(toShortForWhishlist);
+    suggestedOffers.innerHTML += `<div class="card-suggested-offer"><img class="img-suggested-offer" src="${contentCard[getIdOfBtn - 1].src}" alt="Мебель" width="70px" height="70px"><p class="p-suggested-offer">${shorted}</p><div class="div-suggested-offer"><button class="btn-suggested-offer""><img src="./assets/icons/bin.svg" alt="Отменить и убрать" width="50px" height="50px"></button></div></div>`;
+    // delete previous shorted text
+    toShortForWhishlist.pop();
+    
     modalOffer.close();
 })
 
+// delegation event listeners for delete good from wishlist
+
 suggestedOffers.addEventListener('click', (e) => {
-    const btnSuggestedOffer = e.target.closest('.btn-suggested-offer');;
+    const btnSuggestedOffer = e.target.closest('.btn-suggested-offer');
+    const cardSuggestedOffer = e.target.closest('.card-suggested-offer');
 
     if (btnSuggestedOffer) {
-        const idOfRemoveBtn = Number(btnSuggestedOffer.dataset.removefromwhislist);
-        console.log(idOfRemoveBtn);
-        
+        cardSuggestedOffer.remove()
+        checkIfBinEmpty();
     }
 })
 
@@ -305,6 +309,8 @@ order.addEventListener('click', () => {
     }, 9000);
 })
 
+// function for make from long text to short text
+
 function shortText(text) {
     let restoredStr;
     let restoredAll = [];
@@ -319,4 +325,16 @@ function shortText(text) {
         restoredAll.push(restoredStr);
     }
     return restoredAll;
+}
+
+// function for check if bin empty put definite text, else: text is absence and there is will be goods
+
+function checkIfBinEmpty() {
+    if (!suggestedOffers.querySelector('.card-suggested-offer')) {
+        suggestedOffers.innerHTML = `<h2 class="if-bin-empty">Здесь пока ничего нету</h2>`;
+    }
+
+    else if (suggestedOffers.querySelector('.if-bin-empty')) {
+        suggestedOffers.querySelector('.if-bin-empty').remove();
+    }
 }
