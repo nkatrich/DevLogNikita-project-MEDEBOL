@@ -21,9 +21,13 @@
     const btnOrderPreform = document.querySelector('.div-order-preform button');
     const suggestedOffers = document.querySelector('.suggested-offers');
     const pSuggestedOffer = document.querySelector('.p-suggested-offer');
+    const formEmail = document.querySelector('#email');
+    const formName = document.querySelector('#name');
+    const tick = document.querySelector('#tick');
 
     // modal window form
     const order = document.querySelector('.order');
+    const inCaseIfWrong = document.querySelector('.in-case-if-wrong')
     const ifOrderSuccessful = document.querySelector('.if-order-successful');
 
     // fixed button to check whishlist
@@ -258,6 +262,7 @@ btnCatalog.addEventListener('mouseleave', () => {
 currentBag.addEventListener('click', () => {
     bagOfOffers.showModal();
     checkIfBinEmpty();
+    checkIfBtnPreorderEnable();
 })
 
 // insert good in wishlist
@@ -279,8 +284,9 @@ suggestedOffers.addEventListener('click', (e) => {
     const cardSuggestedOffer = e.target.closest('.card-suggested-offer');
 
     if (btnSuggestedOffer) {
-        cardSuggestedOffer.remove()
+        cardSuggestedOffer.remove();
         checkIfBinEmpty();
+        checkIfBtnPreorderEnable();
     }
 })
 
@@ -296,17 +302,29 @@ document.addEventListener('click', (e) => {
     }
 })
 
-btnOrderPreform.addEventListener('click', () => {
-    bagOfOffers.close();
-    formForBuy.showModal();
-})
-
-order.addEventListener('click', () => {
-    formForBuy.close();
-    ifOrderSuccessful.classList.add('shown');
-    setTimeout(() => {
-        ifOrderSuccessful.classList.remove('shown');
-    }, 9000);
+formForBuy.showModal()// form logic
+let checkOneTime = true;
+order.addEventListener('click', (e) => {
+    e.preventDefault();
+    let formEmailValue = formEmail.value;
+    let formNameValue = formName.value;
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (regex.test(formEmailValue) && formEmailValue.length >= 6 && formNameValue.length >= 2 && tick.checked) {
+        formForBuy.close();
+        suggestedOffers.innerHTML = ``;
+        ifOrderSuccessful.classList.add('shown');
+        setTimeout(() => {
+            ifOrderSuccessful.classList.remove('shown');
+        }, 9000)
+    }
+    else {
+        if (checkOneTime) {
+            inCaseIfWrong.style.display = 'block';
+            inCaseIfWrong.innerText = `Введены некорректные данные. Проверьте что все поля введены, email содержит @, .com. Так же вы согласными с условиями.`;
+            checkOneTime = false;
+        }
+    }
 })
 
 // function for make from long text to short text
@@ -336,5 +354,19 @@ function checkIfBinEmpty() {
 
     else if (suggestedOffers.querySelector('.if-bin-empty')) {
         suggestedOffers.querySelector('.if-bin-empty').remove();
+    }
+}
+
+function checkIfBtnPreorderEnable() {
+    if (suggestedOffers.querySelector('.card-suggested-offer')) {
+        btnOrderPreform.disabled = false;
+        btnOrderPreform.addEventListener('click', () => {
+            bagOfOffers.close();
+            formForBuy.showModal();
+        })
+    }
+
+    if (!suggestedOffers.querySelector('.card-suggested-offer')) {
+        btnOrderPreform.disabled = true;
     }
 }

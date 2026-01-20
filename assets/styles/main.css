@@ -334,8 +334,8 @@
 
 .div-current-bag {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: 10px;
+    bottom: 10px;
 }
 
 .current-bag {
@@ -369,6 +369,18 @@
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(5px);
     z-index: 9;
+}
+
+.in-case-if-wrong {
+    max-width: 450px;
+    font-weight: bold;
+    font-size: clamp(16px, 1.3vw, 24px);
+    text-align: center;
+    background-color: red;
+    border-radius: var(--border-radius-major-elements);
+    padding: 5px;
+    margin-bottom: 10px;
+    display: none;
 }
 
 .if-order-successful {
@@ -478,6 +490,11 @@ dialog::backdrop {
     gap: 5px;
 }
 
+.div-order-preform button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 .bag-of-offers {
     width: 100%;
     display: flex;
@@ -569,7 +586,7 @@ form label {
     margin: 20px;
 }
 
-#email, #password {
+#email, #name {
     width: 100%;
     max-width: 500px;
     border-radius: var(--border-radius-major-elements);
@@ -581,7 +598,7 @@ form label {
     font-size: clamp(18px, 1.4vw, 28px);
 }
 
-#email::placeholder, #password::placeholder {
+#email::placeholder, #name::placeholder {
     color: var(--light-theme);
     font-weight: bold;
     font-size: clamp(18px, 1.4vw, 28px);
@@ -686,5 +703,10 @@ form label {
 
     .three-offer {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .div-current-bag {
+        right: 20px;
+        bottom: 20px;
     }
 }
