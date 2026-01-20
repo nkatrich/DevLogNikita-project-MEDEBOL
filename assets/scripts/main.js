@@ -8,6 +8,11 @@
     // catalog
     const modalCatalog = document.querySelector('.modal-catalog');
 
+    // slider
+    const slider = document.querySelector('.slider');
+    const btnLeftArrowOfSlider = document.querySelector('.btn-left-arrow-of-slider');
+    const btnRightArrowOfSlider = document.querySelector('.btn-right-arrow-of-slider');
+
     // modal windows
     const dialog = document.querySelector('dialog');
     const modalOffer = document.querySelector('.modal-offer');
@@ -70,6 +75,8 @@ toggleTheme.addEventListener('click', () => {
     suggestedOffersByInput.classList.toggle('dark');
     btnCatalog.classList.toggle('dark');
     modalCatalog.classList.toggle('dark');
+    btnLeftArrowOfSlider.classList.toggle('dark');
+    btnRightArrowOfSlider.classList.toggle('dark');
     currentOffers.classList.toggle('dark');
 
     headerFooterLogo.forEach(el => {
@@ -257,6 +264,24 @@ btnCatalog.addEventListener('mouseleave', () => {
     modalCatalog.classList.remove('shown');
 })
 
+// logic of slider
+
+let indexOfImgInSlider = 0;
+
+btnLeftArrowOfSlider.addEventListener('click', () => {
+    if (indexOfImgInSlider > 0) {
+        indexOfImgInSlider--;
+        moveSlider();
+    }
+})
+
+btnRightArrowOfSlider.addEventListener('click', () => {
+    if (indexOfImgInSlider != 2) {
+        indexOfImgInSlider++;
+        moveSlider();
+    }
+})
+
 // logic of dialogs
 
 currentBag.addEventListener('click', () => {
@@ -302,7 +327,8 @@ document.addEventListener('click', (e) => {
     }
 })
 
-formForBuy.showModal()// form logic
+// form logic
+
 let checkOneTime = true;
 order.addEventListener('click', (e) => {
     e.preventDefault();
@@ -369,4 +395,11 @@ function checkIfBtnPreorderEnable() {
     if (!suggestedOffers.querySelector('.card-suggested-offer')) {
         btnOrderPreform.disabled = true;
     }
+}
+
+// function need for move pictures in slider
+
+function moveSlider() {
+    const widthOfSlider = slider.offsetWidth;
+    slider.style.transform = `translateX(-${indexOfImgInSlider * widthOfSlider}px)`;
 }
