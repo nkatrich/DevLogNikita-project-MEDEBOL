@@ -1,6 +1,8 @@
 // Variables
     // DOM vars
 
+    // support
+    const technicalSupport = document.querySelector('.technical-support');
 
     // DOM change theme
     const toggleTheme = document.querySelector('.toggle-theme');
@@ -32,7 +34,7 @@ toggleTheme.addEventListener('click', () => {
     })
 });
 
-// Logic scroll header
+// logic scroll header
 
 window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset;
@@ -45,3 +47,8 @@ window.addEventListener('scroll', () => {
     window.lastScrollTop = scrollTop;
 });
 
+// logic of support
+
+technicalSupport.addEventListener('click', () => {
+    alert('В данный момент, тех. поддержка пока что не работает. Обратитесь позже');
+})
