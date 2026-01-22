@@ -336,6 +336,7 @@ document.addEventListener('click', (e) => {
         modalOffer.close();
         bagOfOffers.close();
         formForBuy.close();
+        toShortForWhishlist.pop();
     }
 })
 

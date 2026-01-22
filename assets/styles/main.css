@@ -87,6 +87,7 @@
     font-size: clamp(16px, 1.55vw, 36px);
     font-weight: bold;
     text-decoration: none;
+    transition: background-color var(--transition-standard);
 }
 
 .suggested-offers-by-input.dark a {
@@ -166,6 +167,7 @@
     text-decoration: none;
     display: block;
     padding: 5px;
+    transition: background-color var(--transition-standard);
 }
 
 .modal-catalog:hover {
@@ -188,6 +190,7 @@
 .insertion-of-image {
     width: 100%;
     overflow: hidden;
+    border-radius: var(--border-radius-major-elements);
 }
 
 .slider {
@@ -734,7 +737,19 @@ form label {
         bottom: 20px;
     }
 
+    .modal-catalog a:hover, .suggested-offers-by-input a:hover {
+        background-color: var(--hover-dark-theme);
+    }
+
+    .modal-catalog.dark a:hover, .suggested-offers-by-input.dark a:hover {
+        background-color: var(--hover-light-theme);
+    }
+
     .btn-left-arrow-of-slider:hover, .btn-right-arrow-of-slider:hover {
         background-color: var(--hover-dark-theme);
+    }
+
+    .btn-left-arrow-of-slider.dark:hover, .btn-right-arrow-of-slider.dark:hover {
+        background-color: var(--hover-light-theme);
     }
 }
