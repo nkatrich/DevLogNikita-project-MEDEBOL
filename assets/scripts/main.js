@@ -1,6 +1,11 @@
 // variables
     // DOM vars
 
+    // burger-menu
+
+    const burgerMenuBtn = document.querySelector('.burger-menu');
+    const burgerMenuModal = document.querySelector('.burger-menu-modal');
+
     // input find offer
     const suggestedOffersByInput = document.querySelector('.suggested-offers-by-input');
     const darkBg = document.querySelector('.dark-bg');
@@ -70,6 +75,7 @@ toggleTheme.addEventListener('click', () => {
     footer.classList.toggle('dark');
     toggleTheme.classList.toggle('dark');
     toggleView.classList.toggle('dark');
+    burgerMenuModal.classList.toggle('dark');
     inputSearch.classList.toggle('dark');
     search.classList.toggle('dark');
     suggestedOffersByInput.classList.toggle('dark');
@@ -174,6 +180,12 @@ divOffers.addEventListener('click', (e) => {
         price.textContent = `${contentCard[getIdOfBtn - 1].price}£`;
         toShortForWhishlist.push(contentCard[getIdOfBtn - 1].text);
     }
+})
+
+// logic burger-menu
+
+burgerMenuBtn.addEventListener('click', () => {
+    burgerMenuModal.classList.toggle('shown');
 })
 
 // logic of input search

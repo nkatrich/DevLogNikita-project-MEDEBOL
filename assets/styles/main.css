@@ -4,28 +4,6 @@
     display: none;
 }
 
-.burger-menu {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.stick {
-    background-color: var(--dark-theme);
-    width: 55px;
-    height: 6px;
-}
-
-.stick.dark {
-    background-color: var(--light-theme);
-}
-
-.burger-menu-modal {
-    display: none;
-}
-
 .blocks-of-input-and-catalog {
     display: flex;
     flex-direction: column;
