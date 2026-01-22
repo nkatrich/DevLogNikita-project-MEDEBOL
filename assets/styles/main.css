@@ -17,10 +17,6 @@
     display: flex;
 }
 
-.blocks-of-input-and-catalog.moved {
-    transform: translateY(-90px);
-}
-
 .input-search {
     width: 250px;
     border-radius: 20px 0 0 20px;
@@ -200,6 +196,7 @@
     height: 100%;
     min-height: 100px;
     max-height: 400px;
+    transition: transform var(--transition-standard);
 }
 
 .slider-item {
@@ -255,6 +252,8 @@
     padding: 10px;
     background-color: var(--dark-theme);
     border-radius: var(--border-radius-major-elements);
+    cursor: pointer;
+    transition: background-color var(--transition-standard);
 }
 
 .btn-left-arrow-of-slider.dark, .btn-right-arrow-of-slider.dark {
@@ -277,14 +276,6 @@
 .offers {
     display: grid;
     justify-content: center;
-}
-
-.div-offers {
-    
-}
-
-.div-offers section {
-    
 }
 
 .current-offers {
@@ -370,14 +361,7 @@
     border-radius: var(--border-radius-major-elements);
     margin: 10px;
     padding: 10px;
-}
-
-.footer {
-
-}
-
-.footer-container {
-
+    cursor: pointer;
 }
 
 .div-current-bag {
@@ -396,6 +380,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .current-bag.dark {
@@ -492,10 +477,6 @@ dialog::backdrop {
     grid-template-columns: 1fr;
 }
 
-.content-image-offer {
-
-}
-
 .content-image-offer img {
     border-radius: var(--border-radius-card-offer);
 }
@@ -536,6 +517,7 @@ dialog::backdrop {
     justify-content: center;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 }
 
 .div-order-preform button:disabled {
@@ -596,14 +578,11 @@ dialog::backdrop {
     background-color: red;
     height: 100%;
     border-radius: 0 20px 20px 0;
+    cursor: pointer;
 }
 
 .if-bin-empty {
     text-align: center;
-}
-
-.div-order-preform {
-
 }
 
 .form-for-buy {
@@ -611,10 +590,6 @@ dialog::backdrop {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.div-form {
-    
 }
 
 form {
@@ -674,6 +649,7 @@ form label {
 
 .div-close-modal button {
     background: none;
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -709,10 +685,6 @@ form label {
     .content-of-offer {
         display: grid;
         grid-template-columns: 100% 100%;
-    }
-
-    .content-description-offer {
-        
     }
     
     .content-of-bag-of-offers {
@@ -760,5 +732,9 @@ form label {
     .div-current-bag {
         right: 20px;
         bottom: 20px;
+    }
+
+    .btn-left-arrow-of-slider:hover, .btn-right-arrow-of-slider:hover {
+        background-color: var(--hover-dark-theme);
     }
 }

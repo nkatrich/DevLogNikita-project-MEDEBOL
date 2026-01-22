@@ -50,10 +50,6 @@
     text-decoration: none;
 }
 
-.description-about-company {
-    
-}
-
 .desciption-titles-and-paragraphs {
     padding: 15px;
 }
@@ -107,6 +103,7 @@
 
 .technical-support {
     text-decoration: underline 3px var(--accent-color);
+    cursor: pointer;
 }
 
 .marketing-logos {
@@ -148,10 +145,8 @@
                 1px 1px 0 var(--light-theme);
 }
 
-@media (min-width: 768px) {
-    
-}
-
 @media (min-width: 1024px) {
-    
+    .technical-support:hover {
+        color: var(--accent-color);
+    }
 }

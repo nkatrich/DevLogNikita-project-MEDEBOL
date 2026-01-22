@@ -16,9 +16,16 @@ body.dark::-webkit-scrollbar-track {
     background-color: var(--light-theme);
 }
 
+body, header, main, footer, .header-footer-logo, .toggle-theme, .stick, .burger-menu-modal, .card-offer, .btn-catalog, .input-search, .btn-left-arrow-of-slider, .btn-right-arrow-of-slider {
+    transition: background-color var(--transition-standard), color var(--transition-standard);
+}
+
+header, .blocks-of-input-and-catalog {
+    transition: transform var(--transition-standard);
+}
+
 ::-webkit-scrollbar {
     width: 9px;
-    
 }
 
 ::-webkit-scrollbar-track {
@@ -72,7 +79,7 @@ header::after {
     pointer-events: none;
 }
 
-.header.moved {
+.header.moved, .blocks-of-input-and-catalog.moved {
     transform: translateY(-90px);
 }
 
@@ -133,6 +140,7 @@ header::after {
     border-radius: 30px;
     border: none;
     background-color: var(--dark-theme);
+    cursor: pointer;
 }
 
 .toggle-theme.dark {
@@ -150,6 +158,7 @@ header::after {
     top: 50%;
     left: 50%;
     transform: translate(-0%, -50%);
+    transition: transform var(--transition-standard), background-color var(--transition-standard);
 }
 
 .toggle-view.dark {
@@ -284,5 +293,13 @@ header::after {
 @media (min-width: 1024px) {
     .header-container {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .div-nav-header-footer a:hover {
+        color: var(--hover-dark-theme);
+    }
+
+    .div-nav-header-footer.dark a:hover {
+        color: var(--hover-light-theme);
     }
 }
